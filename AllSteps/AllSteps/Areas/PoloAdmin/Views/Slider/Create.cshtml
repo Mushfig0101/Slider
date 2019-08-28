@@ -1,0 +1,62 @@
+﻿@model Slider
+@{
+    ViewData["Title"] = "Create";
+}
+<!---
+
+    <h2>Create</h2>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <form method="post">
+                <div class="form-group">
+                    <label>Title</label>
+                    <input type="text" name="title" class="form-control" />
+                </div>
+            </form>
+            <form method="post">
+                <div class="form-group">
+                    <label>Description</label>
+                    <input type="text" name="description" class="form-control" />
+                </div>
+                <input type="submit" class="btn btn-primary" value="Create"/>
+            </form>
+        </div>
+        </div>
+    </div>
+
+-->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <form method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label asp-for="Title">Title</label>
+                    <input asp-for="Title" class="form-control" />
+                    <span asp-validation-for="Title" class="text-danger"></span>
+
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Description">Description</label>
+                    <input asp-for="Description" accept="image\*" class="form-control" />
+                    <!-- accept="image\*" ne demekdir?
+                        Bu yazilis o demekdir ki yalniz iomageformatinda olan fayllari qebul edir.
+                     ulduz => * ise o demekdir ki, img, .jpg, .png  ve s.
+                        enctype="multipart/form-data" Formdan file qebul etmek ucundur.
+                        Basqa cur mumkun deyil.
+                        Eger biz bu scripti yazmasaq formda submit basilanda inputu qebul etmeyecek.
+                    -->
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Photo">Photo</label>
+                    <input asp-for="Photo" class="form-control" />
+                    <span asp-validation-for="Photo" class="text-danger"></span>
+                </div>
+                <input type="submit" class="btn btn-primary" value="Create" />
+            </form>
+        </div>
+    </div>
+</div>

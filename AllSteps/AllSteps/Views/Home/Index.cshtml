@@ -1,0 +1,379 @@
+﻿@model Enumarables
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+}
+
+
+<main>
+
+    <section id="carusel">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="main-carousel">
+                        @foreach (var slider in Model.Sliders)
+                          {
+                        <div id="slide-1" class="carousel-cell og" data-id="1">
+                            @*<div class="bg" style="background: url('../img/pattern/@slider.Image')"></div>*@
+                            <div class="bg" style="background: url('../img/@slider.Image')"></div>
+                            <div class="text">
+                                <h1>@slider.Title</h1>
+                                <p>
+                                    @slider.Description
+                                </p>
+                            </div>
+                        </div>
+                         }
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+
+    <section id="polo">
+        <div class="container">
+            <div class="row align-items-center justify-content-center text-center mb-5 ">
+                <div class=" col-md-12 " data-aos="fade-up">
+                    <h2>@Model.Welcome.First().Title</h2>
+                    <hr>
+                    <span>@Model.Welcome.First().Info</span>
+                </div>
+            </div>
+            <div class="row h-100 align-items-center justify-content-start">
+                <div class="col-md-12">
+                    <div class="img" data-aos="fade-up">
+                        <img src="~/img/index image/@Model.Welcome.First().Image">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div style="margin-bottom:30px"> </div>
+    <section id="grey">
+        <div class="container">
+            <div class="row align-items-center justify-content-start">
+                <div class="col-md-12">
+                    <div class="title_content" data-aos="fade-up">
+                        <h2>@Model.Description.ElementAt(0).UpTitle</h2>
+                        <hr>
+                        <span>
+                           @Model.Description.ElementAt(0).DownTitle
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row align-items-center justify-content-center">
+
+                @foreach (var work in Model.WhatWeDos)
+                {
+                    <div class="col-md-4">
+                        <div class="animate" data-aos="fade-up">
+                            <h4>@work.Title</h4>
+                            <p>
+                               @work.Description
+                            </p>
+                        </div>
+                    </div>
+                 }
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section id="recent_work mt-5 !important">
+        <div class="container">
+            <div class="row">
+                <h2>@Model.Description.ElementAt(1).UpTitle</h2>
+
+                <span>
+                   @Model.Description.ElementAt(1).DownTitle
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <section id="imagescol">
+        <div class="container">
+            <div class="row mt-5 ">
+                <div class="col-md-3">
+                    <img class="img-thumbnail" src="~/img/carusel/1.jpg" />
+                </div>
+                <div class="col-md-3">
+                    <img class="img-thumbnail" src="~/img/carusel/2.jpg" />
+                </div>
+                <div class="col-md-3">
+                    <img class="img-thumbnail" src="~/img/carusel/3.jpg" />
+                </div>
+                <div class="col-md-3">
+                    <img class="img-thumbnail" src="~/img/carusel/4.jpg" />
+                </div>
+                <div class="col-md-3">
+                    <img class="img-thumbnail" src="~/img/carusel/5.jpg" />
+                </div>
+                <div class="col-md-3">
+                    <img class="img-thumbnail" src="~/img/carusel/6.jpg" />
+                </div>
+                <div class="col-md-3">
+                    <img class="img-thumbnail" src="~/img/carusel/7.jpg" />
+                </div>
+                <div class="col-md-3">
+                    <img class="img-thumbnail" src="~/img/carusel/8.jpg" />
+                </div>
+                <div class="col-md-3">
+                    <img class="img-thumbnail" src="~/img/carusel/9.jpg" />
+                </div>
+                <div class="col-md-3">
+                    <img class="img-thumbnail" src="~/img/carusel/1.jpg" />
+                </div>
+                <div class="col-md-3">
+                    <img class="img-thumbnail" src="~/img/carusel/2.jpg" />
+                </div>
+                <div class="col-md-3">
+                    <img class="img-thumbnail" src="~/img/carusel/3.jpg" />
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="container">
+
+            <div class="row align-items-center justify-content-center text-center">
+                <div class="services">
+                    <h2>@Model.Description.ElementAt(2).UpTitle</h2>
+                    <hr>
+                    <span>
+                      @Model.Description.ElementAt(2).DownTitle
+                    </span>
+                </div>
+            </div>
+            <div class="row flex-wrap-wrap mt-5">
+                @foreach (var service in Model.Service)
+                {
+                    <div class="col-md-4">
+                        <div class="keep" data-aos="fade-up">
+                            <div class="icon">
+                                <a href="#">
+                                    <i class="@service.Icon"></i>
+                                    <div class="cicle"></div>
+                                </a>
+                            </div>
+                            <div class="keep_content">
+                                <h3>@service.Title</h3>
+                                <p>
+                                   @service.Content
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                }
+
+
+            </div>
+        </div>
+    </section>
+    <section id="paralaks">
+        <div class="paralaks">
+
+            <div class="row justify-content-center align-items-center text-center m-0">
+                <div class="col-md-3">
+                    <div class="icon_code">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="paralax_own">
+                        <span class="span">12416</span>
+                    </div>
+                    <div class="paralax_content">
+                        <p>
+                            LINES OF CODE
+
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="icon_code">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="paralax_own">
+                        <span class="span">365</span>
+                    </div>
+                    <div class="paralax_content">
+                        <p>
+                            LINES OF CODE
+
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="icon_code">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="paralax_own">
+                        <span class="span">114</span>
+                    </div>
+                    <div class="paralax_content">
+                        <p>
+                            LINES OF CODE
+
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="icon_code">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="paralax_own">
+                        <span class="span">14825</span>
+                    </div>
+                    <div class="paralax_content">
+                        <p>
+                            LINES OF CODE
+
+                        </p>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+    <section id="cards">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 marg">
+                    <h2>@Model.Description.ElementAt(3).UpTitle </h2>
+                    <span>
+                       @Model.Description.ElementAt(3).DownTitle
+                    </span>
+                </div>
+            </div>
+            <div class="row justify-content-center align-items-center mt-5">
+                @foreach (var blog in Model.Blog)
+                {
+                    <div class="col-md-4">
+                        <div class="hold">
+                            <div class="cards_img">
+                                <a>
+                                    <img src="~/img/cards_img/@blog.Image">
+
+                                </a>
+                                <span><a href="#">@blog.LifeStyle</a></span>
+                            </div>
+
+                            <div class="cards_content">
+                                <span>Jan 21, 2017</span>
+                                <span>33 Comments</span>
+                                <a href="#">
+                                    <h2>@blog.Title</h2>
+                                </a>
+
+                                <p>
+                                    @blog.Description
+                                </p>
+                                <a href="#">
+                                    READ MORE
+                                    <i class="fa fa-arrow-right"></i>
+                                </a>
+
+
+                            </div>
+                        </div>
+
+                    </div>
+                }
+
+
+            </div>
+        </div>
+
+    </section>
+    <section id="clients">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 clientmarg">
+                    <h2>@Model.Description.ElementAt(4).UpTitle</h2>
+                    <p>@Model.Description.ElementAt(4).DownTitle</p>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+        <!-- Flickity HTML init -->
+
+
+
+    </section>
+
+
+    <section id="team">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 team">
+                    <h2>@Model.Description.ElementAt(5).UpTitle </h2>
+
+                    <p>
+                       @Model.Description.ElementAt(5).DownTitle
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card-deck">
+
+                        @foreach (var ourteam in Model.OurTeam)
+                        {
+                            <div class="card">
+                                <img src="~/img/team/@ourteam.Image" class="card-img-top" alt="...">
+                                <div class="card-body text-center card_some">
+                                    <h5 class="card-title">@ourteam.Title </h5>
+                                    <p class="card-text"><small class="text-muted">@ourteam.Smal</small></p>
+                                    <p class="card-text">
+                                       @ourteam.Description
+                                    </p>
+                                    <div class="smile">
+                                        <a class="btn btn-xs btn-slide btn-light">
+                                            <i class="fab fa-facebook-f"></i>
+                                            <span>facebook</span>
+                                        </a>
+
+                                        <a class="btn btn-xs btn-slide btn-light">
+                                            <i class="fab fa-twitter"></i>
+                                            <span> twitter</span>
+                                        </a>
+                                        <a class="btn btn-xs btn-slide btn-light">
+                                            <i class="fab fa-instagram"></i>
+                                            <span> instagram</span>
+                                        </a>
+                                        <a class="btn btn-xs btn-slide btn-light">
+                                            <i class="far fa-envelope"></i>
+                                            <span>mail</span>
+                                        </a>
+                                    </div>
+
+                                </div>
+                            </div>
+                         }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main> 

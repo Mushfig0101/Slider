@@ -1,0 +1,21 @@
+﻿@model WhatWeDo
+@{
+    ViewData["Title"] = "Detail";
+}
+
+<h2>Detail</h2>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <h3>@Model.Title</h3>
+            <p>@Model.Description</p>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <a asp-action="Index"> Go Back</a>
+            </div>
+
+        </div>
+    </div>
+</div>

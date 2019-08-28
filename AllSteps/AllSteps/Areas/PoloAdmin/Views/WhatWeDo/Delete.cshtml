@@ -1,0 +1,30 @@
+﻿@model WhatWeDo
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <h3>@Model.Title</h3>
+            <p>@Model.Description</p>
+            <p class="text-danger"> Are you sure delete this data? </p>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <form  method="post">
+                    <input type="submit" class="btn btn-danger" value="Delete" />
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <a asp-action="Index" class="fas fa-arrow-left">Go Back</a>
+            </div>
+        </div>
+    </div>
+</div>
+//Biz Delete -i yazanda bir id gondermeliyik
+//id yeni secilmis olan data-ni silmeliyik.
